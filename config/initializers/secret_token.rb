@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WeddingAsArt::Application.config.secret_key_base = '81dccbf67404df6e3b6bb552423cf2bdbb1dca866b84923d08ba117fe5b155a00ff552ac2b3c13118435ae2bf4210ce0219e9479f701f2f9bf703391affb9528'
+WeddingAsArt::Application.config.secret_key_base = '8bdd7197c1c9a1fd6c0412840862a02689de55d31a8019b08cc0dc4bff3fbb074a228c90962b2682534e291c207169b68429476bcfb6a27f63aca3b9abb7fc7f'
