@@ -4,5 +4,8 @@ class Product
   key :name, String
   key :type, String
   key :price, Number
+  key :dimensions, Hash
+
+  
 
 end
