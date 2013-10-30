@@ -6,6 +6,5 @@ class Product
   key :price, Number
   key :dimensions, Hash
 
-  
-
+  belongs_to :productable, :polymorphic => true
 end

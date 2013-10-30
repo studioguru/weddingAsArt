@@ -1,13 +1,9 @@
 class ProductList
   include MongoMapper::Document
 
-  key :albums, Array
-  key :print_media, Array
-  key :specialties, Array
-
-  many :products, :in => :albums
-  many :products, :in => :print_media
-  many :products, :in => :specialties
+  many :albums, :as => :productable
+  many :print_media, :as => :productable
+  many :specialties, :as => :productable
 
   belongs_to :photographer
 end
