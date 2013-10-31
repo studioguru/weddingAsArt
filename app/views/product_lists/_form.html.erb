@@ -1,0 +1,22 @@
+<%= form_for(@product) do |f| %>
+	<table>
+		<tr>
+			<th>Width</th><th>Height</th><th>Price</th>
+		</tr>
+		<tr>
+			<td>
+				<%= f.label :width %>
+				<%= f.text_field :width %>
+			</td>
+			<td>
+				<%= f.label :height %>
+				<%= f.text_field :height %>
+			</td>
+			<td>
+				<%= f.label :price %>
+				<%= f.number_field :price %>
+			</td>
+		</tr>
+	</table>
+	<%= f.submit %>
+<% end %>

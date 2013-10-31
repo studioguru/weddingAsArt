@@ -1,0 +1,15 @@
+<%= form_for(@photographer) do |f| %>
+	<table>
+		<tr>
+			<td>
+				<%= f.text_field :email %>
+				<%= f.label :email %>
+			</td>
+			<td>
+				<%= f.password_field :password %>
+				<%= f.label :password %>
+			</td>
+		</tr>
+	</table>
+	<%= f.submit %>
+<% end %>
