@@ -1,6 +1,20 @@
 <h2>Product list for <%= current_user.email %></h2>
-<% @product_list.products.each do |product| %>
-	<%= render 'products/show', product: product %>
-<% end %>
 
-<%= render 'products/form' %>
+<div>
+	<h2>Albums</h2>
+	<% @product_list.albums.each do |product| %>
+		<%= render 'products/show', product: product %>
+	<% end %>
+
+	<%= render 'products/form', type: 'album' %>
+</div>
+
+<div>
+	<h2>Prints</h2>
+		<% @product_list.prints.each do |product| %>
+		<%= render 'products/show', product: product %>
+	<% end %>
+
+	<%= render 'products/form', type: 'album' %>
+</div>
+

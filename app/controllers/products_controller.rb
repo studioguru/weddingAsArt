@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      product_fields = params.require(:product).permit(:width, :height, :price)
+      product_fields = params.require(:product).permit(:width, :height, :price, :type)
       product_fields[:price] = product_fields[:price].to_f
       product_fields
     end
