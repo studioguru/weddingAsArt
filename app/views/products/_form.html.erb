@@ -1,0 +1,19 @@
+<%= form_for(@product, url: "/product_lists/#{@product_list._id}/products", method: 'post') do |f| %>
+	<table>
+		<tr>
+			<th>Width</th><th>Height</th><th>Price</th>
+		</tr>
+		<tr>
+			<td>
+				<%= f.text_field :width %>
+			</td>
+			<td>
+				<%= f.text_field :height %>
+			</td>
+			<td>
+				<%= f.text_field :price %>
+			</td>
+		</tr>
+	</table>
+	<%= f.submit %>
+<% end %>

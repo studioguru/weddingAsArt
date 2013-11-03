@@ -7,8 +7,9 @@ WeddingAsArt::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   resources :photographers
-  resources :product_lists
-  resources :products
+  resources :product_lists do
+    resources :products
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

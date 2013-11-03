@@ -9,7 +9,7 @@ class Product
     end
 
     def self.from_mongo(value)
-      value.nil? ? nil : value.to_i
+      value.nil? ? nil : value.to_f
     end
   end
 

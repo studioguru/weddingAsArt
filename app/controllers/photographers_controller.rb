@@ -1,6 +1,5 @@
 class PhotographersController < ApplicationController
   include SessionsHelper
-  before_action :photographer_params, only: [:create, :update]
 
 	def new
     @photographer = Photographer.new
