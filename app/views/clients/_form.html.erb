@@ -1,0 +1,21 @@
+<%= form_for(@client) do |f| %>
+	<div>
+		<%= f.text_field :email %>
+		<%= f.label :email %>
+	</div>
+	<div>
+		<%= f.password_field :password %>
+		<%= f.label :password %>
+	</div>
+	<div>
+		<%= f.text_field :partner1 %>
+		<%= f.label :partner1 %>
+	</div>
+	<div>
+		<%= f.text_field :partner2 %>
+		<%= f.label :partner2 %>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>

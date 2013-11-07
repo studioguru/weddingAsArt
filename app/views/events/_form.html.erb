@@ -1,0 +1,15 @@
+<%= form_for(@event, url: "/photographers/#{@photographer._id}/events", method: 'post') do |f| %>
+	<div class='partner'>
+		<%= f.label :partner1 %>
+		<%= f.text_field :partner1 %>
+	</div>
+	<div class='partner'>
+		<%= f.label :partner2 %>
+		<%= f.text_field :partner2 %>
+	</div>
+	<div class='email'>
+		<%= f.label :client_email %>
+		<%= f.text_field :client_email %>
+	</div>
+	<%= f.submit 'Create Event' %>
+<% end %>

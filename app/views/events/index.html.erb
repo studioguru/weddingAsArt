@@ -1,0 +1,11 @@
+<h2>Events for <%= @photographer.email %></h2>
+
+<% if current_user.instance_of? Photographer %>
+	<%= link_to 'New Event', new_photographer_event_path(@photographer) %>
+<% end %>
+<% @events.each do |event| %>
+	<div>
+		<div><%= event.email %></div>
+		<div><%= event.partner1 %> and <%= event.partner2 %></div>
+	</div>
+<% end %>

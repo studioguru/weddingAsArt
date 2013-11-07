@@ -10,7 +10,7 @@ end
 class WishedProduct
 	include MongoMapper::EmbeddedDocument
 
-	key :quantity, Number
+	key :quantity, Integer
 
 	one :product, :as => :productable
 end

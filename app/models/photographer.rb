@@ -8,10 +8,9 @@ class Photographer
 	key :name, String
 	key :password_hash, String
 	key :studio, String
-	key :event_ids, Array
 
 	one :product_list
-	many :events, :in => :event_ids
+	many :events
 
 	def password
 		@password ||= Password.new(password_hash)

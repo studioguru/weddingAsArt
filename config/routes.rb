@@ -6,10 +6,16 @@ WeddingAsArt::Application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
 
-  resources :photographers
+  resources :photographers do
+    resources :events
+  end
+
   resources :product_lists do
     resources :products
   end
+
+  resources :clients
+  get 'clients/new/:account_key' => 'clients#first_access', as: :first_client_access
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
