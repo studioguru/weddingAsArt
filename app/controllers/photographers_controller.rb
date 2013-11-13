@@ -1,5 +1,6 @@
 class PhotographersController < ApplicationController
-  include SessionsHelper
+  before_action :set_photographer, only: [:update, :edit, :sign_out]
+  before_action :user_is_photographer, only: [:update, :edit, :sign_out]
 
 	def new
     @photographer = Photographer.new
@@ -19,8 +20,26 @@ class PhotographersController < ApplicationController
   def update
   end
 
+  def edit
+  end
+
+  def sign_out
+    sign_out_current_user
+    redirect_to root_path
+  end
+
   private
     def photographer_params
       params.require(:photographer).permit(:email, :password)
+    end
+
+    def set_photographer
+      @photographer = Photographer.find(params[:id])
+    end
+
+    def user_is_photographer
+      unless current_user == @photographer
+        redirect_to sessions[:return_to] || root_path
+      end
     end
 end

@@ -8,7 +8,23 @@
 </head>
 <body>
 
+<h2>Wedding As Art</h2>
+
 <%= link_to 'Home', root_path %>
+
+<% if current_user %>
+<% else %>
+<% end %>
+
+<% if current_user_is?('Photographer') %>
+	<%= link_to 'Sign out', sign_out_photographer_path(current_user) %>
+	<%= render 'photographers/sidebar' %>
+<% elsif current_user_is?('Client') %>
+<% elsif current_user_is?('Guest') %>
+<% else %>
+	<%= link_to 'Create Photographer Account', new_photographer_path %>
+	<%= render 'sessions/sidebar' %>
+<% end %>
 
 <%= yield %>
 

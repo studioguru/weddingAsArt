@@ -1,0 +1,6 @@
+<div class='sidebar'>
+	<h2><%= link_to 'New Event', new_photographer_event_path(current_user) %></h2>
+	<h2><%= link_to 'View Events', photographer_events_path(current_user) %></h2>
+	<h2><%= link_to 'Manage Registry', product_list_path(current_user.product_list) %></h2>
+	<h2><%= link_to 'Account Settings', edit_photographer_path(current_user) %></h2>
+</div>

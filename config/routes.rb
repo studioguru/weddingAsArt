@@ -7,12 +7,19 @@ WeddingAsArt::Application.routes.draw do
   resources :sessions, only: [:create, :destroy]
 
   resources :photographers do
+    member do
+      get 'sign_out'
+    end
     resources :events
   end
 
   resources :product_lists do
     resources :products
   end
+
+  get 'info/faq' => 'static_pages#faq', as: :faq
+  get 'info/costs' => 'static_pages#costs', as: :costs
+  get 'info/getting_paid' => 'static_pages#payment', as: :getting_paid
 
   resources :clients
   get 'clients/new/:account_key' => 'clients#first_access', as: :first_client_access
