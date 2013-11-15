@@ -5,7 +5,8 @@
 <% end %>
 <% @events.each do |event| %>
 	<div>
-		<div><%= event.email %></div>
 		<div><%= event.partner1 %> and <%= event.partner2 %></div>
+		<div><%= event.client_email %></div>
+		<%= link_to 'Show event', photographer_event_path(@photographer, event) %>
 	</div>
 <% end %>

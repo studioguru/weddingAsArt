@@ -5,6 +5,7 @@ class Client
 	include BCrypt
 
   before_create :generate_unique_signin
+  after_create :send_signin_link
 
   key :email, String
 	key :password_hash, String
@@ -29,5 +30,10 @@ class Client
 
     def generate_unique_signin
       self.new_account_key = SecureRandom.hex
+    end
+
+    def send_signin_link
+      # send an email to the client with the sign in link here!
+      puts 'clients/new/'+self.new_account_key
     end
 end
